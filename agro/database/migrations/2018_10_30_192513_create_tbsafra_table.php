@@ -14,12 +14,12 @@ class CreateTbsafraTable extends Migration
     public function up()
     {
         Schema::create('tbsafra', function (Blueprint $table) {
-            $table->unsignedInteger('pescodigo');
-            $table->unsignedInteger('lavcodigo');
-            $table->unsignedInteger('maqcodigo');
+            $table->integer('pescodigo');
+            $table->integer('lavcodigo');
+            $table->integer('maqcodigo');
             $table->increments('safcodigo');
-            $table->increments('safdescricao');
-            $table->increments('safano', 4);
+            $table->string('safdescricao');
+            $table->string('safano', 4);
             $table->timestamps();
 
             $table->foreign('pescodigo')->references('pescodigo')->on('tbpessoa'); 
