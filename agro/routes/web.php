@@ -1,16 +1,28 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/**
+ * @author Ivan Vinicius Boneti
+ * @package agro
+ * @subpackage routes
+ * @since 2018
+ */
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+//Listar Todos
+Route::get('/todosMaquinario', function () {
+   return view('Maquinario');
+});
+
+Route::get('/todosPessoa', function () {
+    return view('pessoa/Pessoa');
+});
+
+Route::get('/todosLavoura', function () {
+    return view('lavoura/Lavoura');
+});
+
+Route::get('/todosSafra', function () {
+    return view('safra/Safra');
 });
