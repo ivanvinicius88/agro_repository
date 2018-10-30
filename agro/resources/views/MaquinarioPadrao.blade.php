@@ -9,18 +9,37 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
-    <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/todosMaquinario"><div class="bg-danger py-2 h4">&nbsp;&nbsp;&nbsp;Agro&nbsp;&nbsp;&nbsp;</div></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class='container'>
-                <ul class="nav nav-tabs">
-                    <li class='nav-bar nav bg-dark'>
-                        <div>
-                        <h5 class='nav-item'><a class=" text-danger " href="/todosFuncionario" id="buscar">Consultar</a></h5>
-                        <h5 class='nav-item'><a class=" text-danger " href="">Cadastrar</a></h5>
-                        </div>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/todosMaquinario">Maquinarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/todosPessoa">Pessoas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/todosLavoura">Lavouras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/todosSafra">Safras</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
 
 
       

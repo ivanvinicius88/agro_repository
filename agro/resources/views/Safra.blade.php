@@ -7,10 +7,12 @@
         <thead>
         <tr>
             <thead>
-                <th>Código</th>
-                <th>Nome</th>
+                <th>Pessoa</th>
+                <th>Lavoura</th>
+                <th>Maquina</th>
+                <th>Safra</th>
+                <th>Descrição</th>
                 <th>Ano</th>
-                <th>Valor</th>
                 <th>Ações</th>
             </thead>
         </tr>
@@ -21,5 +23,5 @@
 @endsection
 
 @section('javascript')
-<script type="text/javascript" src="/js/Maquinario.js"></script>
+<script type="text/javascript" src="/js/Safra.js"></script>
 @endsection

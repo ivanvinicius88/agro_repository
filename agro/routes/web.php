@@ -16,13 +16,13 @@ Route::get('/todosMaquinario', function () {
 });
 
 Route::get('/todosPessoa', function () {
-    return view('pessoa/Pessoa');
+    return view('Pessoa');
 });
 
 Route::get('/todosLavoura', function () {
-    return view('lavoura/Lavoura');
+    return view('Lavoura');
 });
 
 Route::get('/todosSafra', function () {
-    return view('safra/Safra');
+    return view('Safra');
 });

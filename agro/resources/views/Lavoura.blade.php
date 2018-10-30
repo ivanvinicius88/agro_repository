@@ -8,9 +8,7 @@
         <tr>
             <thead>
                 <th>Código</th>
-                <th>Nome</th>
-                <th>Ano</th>
-                <th>Valor</th>
+                <th>Descrição</th>
                 <th>Ações</th>
             </thead>
         </tr>
@@ -21,5 +19,5 @@
 @endsection
 
 @section('javascript')
-<script type="text/javascript" src="/js/Maquinario.js"></script>
+<script type="text/javascript" src="/js/Lavoura.js"></script>
 @endsection

@@ -2,13 +2,15 @@ $(document).ready(function() {
     buscaDados();
 
     function buscaDados() {
-      $.getJSON("http://localhost:8000/api/maquinario/", function(data, status) {
+      $.getJSON("http://localhost:8000/api/safra/", function(data, status) {
         var sHtml = "";
         $.each(data, function(key, val) {
-          sHtml +=  "<tr><td>"  + val.maqcodigo + 
-                    "</td><td>" + val.maqdescricao + 
-                    "</td><td>" + val.maqano + 
-                    "</td><td>" + val.maqvalor +  
+          sHtml +=  "<tr><td>"  + val.pescodigo + 
+                    "</td><td>" + val.lavcodigo + 
+                    "</td><td>" + val.maqcodigo + 
+                    "</td><td>" + val.safcodigo + 
+                    "</td><td>" + val.safdescricao + 
+                    "</td><td>" + val.safano +  
                     "</td><td>" +
                     "<button class='btn btn-danger mx-1'>Excluir</button>" + 
                     "<button class='btn btn-primary'>Alterar</button></td></tr>";

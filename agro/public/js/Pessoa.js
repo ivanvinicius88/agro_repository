@@ -2,13 +2,14 @@ $(document).ready(function() {
     buscaDados();
 
     function buscaDados() {
-      $.getJSON("http://localhost:8000/api/maquinario/", function(data, status) {
+      $.getJSON("http://localhost:8000/api/pessoa/", function(data, status) {
         var sHtml = "";
         $.each(data, function(key, val) {
-          sHtml +=  "<tr><td>"  + val.maqcodigo + 
-                    "</td><td>" + val.maqdescricao + 
-                    "</td><td>" + val.maqano + 
-                    "</td><td>" + val.maqvalor +  
+          sHtml +=  "<tr><td>"  + val.pescodigo + 
+                    "</td><td>" + val.pesnome + 
+                    "</td><td>" + val.pesidade + 
+                    "</td><td>" + val.pescpf + 
+                    "</td><td>" + val.pestelefone +  
                     "</td><td>" +
                     "<button class='btn btn-danger mx-1'>Excluir</button>" + 
                     "<button class='btn btn-primary'>Alterar</button></td></tr>";

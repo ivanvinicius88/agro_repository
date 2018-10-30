@@ -9,8 +9,9 @@
             <thead>
                 <th>Código</th>
                 <th>Nome</th>
-                <th>Ano</th>
-                <th>Valor</th>
+                <th>Idade</th>
+                <th>Cpf</th>
+                <th>Telefone</th>
                 <th>Ações</th>
             </thead>
         </tr>
@@ -21,5 +22,5 @@
 @endsection
 
 @section('javascript')
-<script type="text/javascript" src="js/Maquinario.js"></script>
+<script type="text/javascript" src="/js/Pessoa.js"></script>
 @endsection
