@@ -32,15 +32,15 @@ Route::group(['prefix' => 'maquinario'], function () {
 
 Route::group(['prefix' => 'pessoa'], function () {
 
-    Route::get('',        'ControllerPessoao@todosPessoao');
+    Route::get('',        'ControllerPessoa@todosPessoa');
 
-    Route::get('{id}',    'ControllerPessoao@getPessoao');
+    Route::get('{id}',    'ControllerPessoa@getPessoa');
 
-    Route::post('',       'ControllerPessoao@addPessoao');
+    Route::post('',       'ControllerPessoa@addPessoa');
 
-    Route::put('{id}',    'ControllerPessoao@atualizarPessoao');
+    Route::put('{id}',    'ControllerPessoa@atualizarPessoa');
 
-    Route::delete('{id}', 'ControllerPessoao@deletarPessoao');
+    Route::delete('{id}', 'ControllerPessoa@deletarPessoa');
 
 });
 

@@ -11,36 +11,56 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="/todosMaquinario"><div class="bg-danger py-2 h4">&nbsp;&nbsp;&nbsp;Agro&nbsp;&nbsp;&nbsp;</div></a>
+                <a class="navbar-brand" href="/agro"><div class="bg-danger py-2 h4">&nbsp;&nbsp;&nbsp;Agro&nbsp;&nbsp;&nbsp;</div></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/todosMaquinario">Maquinarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/todosPessoa">Pessoas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/todosLavoura">Lavouras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/todosSafra">Safras</a>
+                    <ul class="nav nav-bar">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" data-toggle="dropdown" href="#">Maquinarios</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/todosMaquinario">Consultar</a>
+                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                          </div>
                         </li>
                     </ul>
-                </div>
+                    <ul class="nav nav-bar">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" data-toggle="dropdown" href="#">Pessoas</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/todosPessoa">Consultar</a>
+                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                          </div>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-bar">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" data-toggle="dropdown" href="#">Lavouras</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/todosLavoura">Consultar</a>
+                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                          </div>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-bar">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" data-toggle="dropdown" href="#">Safras</a>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/todosSafra">Consultar</a>
+                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                          </div>
+                        </li>
+                    </ul>
             </div>
         </nav>
         <br />
         <br />
         <br />
         <br />
-        <br />
 
-
+   
 
       
         @yield('content')

@@ -1,5 +1,5 @@
 
-@extends('MaquinarioPadrao')
+@extends('ViewPadrao')
 
 @section('content')
 <div class='container'>

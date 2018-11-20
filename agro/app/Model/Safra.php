@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Safra extends Model
 {
-    protected $table = 'safra';
+    protected $table = 'tbsafra';
     protected $fillable = array('pescodigo', 'lavcodigo', 'maqcodigo', 'safcodigo', 'safdescricao', 'safano');
 
     protected $primaryKey = "safcodigo";

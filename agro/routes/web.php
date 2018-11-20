@@ -11,6 +11,10 @@ Route::get('/', function () {
 });
 
 //Listar Todos
+Route::get('/agro', function () {
+   return view('ViewPadrao');
+});
+
 Route::get('/todosMaquinario', function () {
    return view('Maquinario');
 });
