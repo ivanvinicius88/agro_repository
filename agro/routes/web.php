@@ -9,12 +9,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-//Listar Todos
 Route::get('/agro', function () {
-   return view('ViewPadrao');
-});
+    return view('ViewPadrao');
+ });
 
+
+//listando
 Route::get('/todosMaquinario', function () {
    return view('Maquinario');
 });
@@ -29,4 +29,21 @@ Route::get('/todosLavoura', function () {
 
 Route::get('/todosSafra', function () {
     return view('Safra');
+});
+
+//adicionando
+Route::get('/addMaquinario', function () {
+    return view('MaquinarioManutencao');
+ });
+ 
+ Route::get('/addPessoa', function () {
+     return view('PessoaManutencao');
+ });
+
+Route::get('/addLavoura', function () {
+    return view('LavouraManutencao');
+});
+
+Route::get('/addSafra', function () {
+    return view('SafraManutencao');
 });

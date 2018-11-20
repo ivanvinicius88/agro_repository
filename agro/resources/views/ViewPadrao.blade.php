@@ -22,7 +22,7 @@
                           <a class="nav-link" data-toggle="dropdown" href="#">Maquinarios</a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="/todosMaquinario">Consultar</a>
-                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                            <a class="dropdown-item" href="/addMaquinario">Cadastrar</a>
                           </div>
                         </li>
                     </ul>
@@ -31,7 +31,7 @@
                           <a class="nav-link" data-toggle="dropdown" href="#">Pessoas</a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="/todosPessoa">Consultar</a>
-                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                            <a class="dropdown-item" href="/addPessoa">Cadastrar</a>
                           </div>
                         </li>
                     </ul>
@@ -40,7 +40,7 @@
                           <a class="nav-link" data-toggle="dropdown" href="#">Lavouras</a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="/todosLavoura">Consultar</a>
-                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                            <a class="dropdown-item" href="/addLavoura">Cadastrar</a>
                           </div>
                         </li>
                     </ul>
@@ -49,7 +49,7 @@
                           <a class="nav-link" data-toggle="dropdown" href="#">Safras</a>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="/todosSafra">Consultar</a>
-                            <a class="dropdown-item" href="/cadastroAlunos">Cadastrar</a>
+                            <a class="dropdown-item" href="/addSafra">Cadastrar</a>
                           </div>
                         </li>
                     </ul>
