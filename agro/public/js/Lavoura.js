@@ -5,13 +5,15 @@ $(document).ready(function() {
       $.getJSON("http://localhost:8000/api/lavoura/", function(data, status) {
         var sHtml = "";
         $.each(data, function(key, val) {
-          sHtml +=  "<tr><td>"  + val.lavcodigo + 
-                    "</td><td>" + val.lavdescricao +  
-                    "</td><td>" +
-                    "<button class='btn btn-danger mx-1'>Excluir</button>" + 
-                    "<button class='btn btn-primary'>Alterar</button></td></tr>";
+          sHtml +=  "<tr>" + 
+                      "<td>" + val.lavcodigo    + "</td>"+
+                      "<td>" + val.lavdescricao + "</td>"+
+                      "<td>" +
+                        "<button id='excluir' class='btn btn-danger mx-1' onclick='deletar(" + val.lavcodigo + ")'>Excluir</button>" + 
+                        "<button class='btn btn-primary'>Alterar</button>" +
+                      "</td>"+
+                    "</tr>";
         });
-
         $("#tabela").html(sHtml);
       });
     };
@@ -32,30 +34,11 @@ $(document).ready(function() {
       }).then(res => {
         $("#buscar").click();
       });
-    });
+    }); */
 
-    $("#excluir").click(function() {
-      let iCodigo = $("#codigo").val();
 
-      if(iCodigo == "") {
 
-      } else {
-        //enviado
-      $.ajax({
-        type: "DELETE",
-        url: "http://localhost:41071/pessoa/"+ iCodigo,
-        success: function(data) {
-          alert("Excluido com Sucesso!");
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-      }
-
-    });
-
+    /*
     $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
       let sNome = $("#nome").val();
@@ -81,3 +64,22 @@ $(document).ready(function() {
     }); */
 
   });
+
+
+function deletar(iCodigo) {
+    if(!iCodigo) {
+      alert('Informe um Registro.');
+    } else {
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:8000/api/lavoura/"+iCodigo,
+            success: function(data) {
+              alert("Registro Excluido com Sucesso!");
+            },
+            contentType: "application/json",
+            dataType: "json"
+        }).then(res => {
+            $("#buscar").click();
+        });
+    }
+}

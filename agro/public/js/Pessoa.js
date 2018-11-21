@@ -5,14 +5,17 @@ $(document).ready(function() {
       $.getJSON("http://localhost:8000/api/pessoa/", function(data, status) {
         var sHtml = "";
         $.each(data, function(key, val) {
-          sHtml +=  "<tr><td>"  + val.pescodigo + 
-                    "</td><td>" + val.pesnome + 
-                    "</td><td>" + val.pesidade + 
-                    "</td><td>" + val.pescpf + 
-                    "</td><td>" + val.pestelefone +  
-                    "</td><td>" +
-                    "<button class='btn btn-danger mx-1'>Excluir</button>" + 
-                    "<button class='btn btn-primary'>Alterar</button></td></tr>";
+          sHtml +=  "<tr>"+
+                    "<td>" + val.pescodigo   + "</td>"+
+                    "<td>" + val.pesnome     + "</td>"+
+                    "<td>" + val.pesidade    + "</td>"+
+                    "<td>" + val.pescpf      + "</td>"+
+                    "<td>" + val.pestelefone + "</td>"+
+                    "<td>" +
+                      "<button id='excluir' class='btn btn-danger mx-1' onclick='deletar(" + val.pescodigo + ")'>Excluir</button>" + 
+                      "<button class='btn btn-primary'>Alterar</button>" +
+                    "</td>"+
+                   "</tr>";
         });
 
         $("#tabela").html(sHtml);
@@ -37,27 +40,7 @@ $(document).ready(function() {
       });
     });
 
-    $("#excluir").click(function() {
-      let iCodigo = $("#codigo").val();
-
-      if(iCodigo == "") {
-
-      } else {
-        //enviado
-      $.ajax({
-        type: "DELETE",
-        url: "http://localhost:41071/pessoa/"+ iCodigo,
-        success: function(data) {
-          alert("Excluido com Sucesso!");
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-      }
-
-    });
+ 
 
     $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
@@ -84,3 +67,22 @@ $(document).ready(function() {
     }); */
 
   });
+
+
+  function deletar(iCodigo) {
+    if(!iCodigo) {
+      alert('Informe um Registro.');
+    } else {
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:8000/api/pessoa/"+iCodigo,
+            success: function(data) {
+              alert("Registro Excluido com Sucesso!");
+            },
+            contentType: "application/json",
+            dataType: "json"
+        }).then(res => {
+            $("#buscar").click();
+        });
+    }
+}

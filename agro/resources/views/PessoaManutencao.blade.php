@@ -17,5 +17,5 @@
 </div>
 @endsection
 @section('scripts')
-<script type="text/javascript" src="/js/Lavoura.js"></script>
+<script type="text/javascript" src="/js/Pessoa.js"></script>
 @endsection
