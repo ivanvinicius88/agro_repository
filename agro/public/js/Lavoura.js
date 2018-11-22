@@ -18,26 +18,6 @@ $(document).ready(function() {
       });
     };
 
-   /* $("#gravar").click(function() {
-      let sNome = $("#nome").val();
-
-      //enviado
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:41071/pessoa",
-        data: JSON.stringify ({nome: sNome}),
-        success: function(data) {
-          //alert("data: " + data);
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-    }); */
-
-
-
     /*
     $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
@@ -65,6 +45,27 @@ $(document).ready(function() {
 
   });
 
+function adicionar(){
+  let iCodigo    = $("#codigo").val();
+  let sDescricao = $("#descricao").val();
+
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:8000/api/lavoura/",
+    data: JSON.stringify ({lavcodigo: iCodigo, lavdescricao : sDescricao}),
+    success: function(data) {
+      alert('Inserido com sucesso.');
+       $("#codigo").val('');
+       $("#descricao").val('');
+    },
+    contentType: "application/json",
+    dataType: "json"
+  }).then(res => {
+    $("#buscar").click();
+  });
+}
+
+
 
 function deletar(iCodigo) {
     if(!iCodigo) {
@@ -74,7 +75,7 @@ function deletar(iCodigo) {
             type: "DELETE",
             url: "http://localhost:8000/api/lavoura/"+iCodigo,
             success: function(data) {
-              alert("Registro Excluido com Sucesso!");
+              alert("Registro Excluido com Sucesso. Pressione F5");
             },
             contentType: "application/json",
             dataType: "json"

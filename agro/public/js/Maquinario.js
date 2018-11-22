@@ -21,26 +21,7 @@ $(document).ready(function() {
       });
     };
 
-   /* $("#gravar").click(function() {
-      let sNome = $("#nome").val();
-
-      //enviado
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:41071/pessoa",
-        data: JSON.stringify ({nome: sNome}),
-        success: function(data) {
-          //alert("data: " + data);
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-    });
-
-
-
+   /* 
     $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
       let sNome = $("#nome").val();
@@ -66,6 +47,31 @@ $(document).ready(function() {
     }); */
 
   });
+
+  function adicionar(){
+    let iCodigo    = $("#codigo").val();
+    let sDescricao = $("#descricao").val();
+    let sAno       = $("#ano").val();
+    let sValor     = $("#valor").val();
+  
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8000/api/maquinario/",
+      data: JSON.stringify ({maqcodigo: iCodigo, maqdescricao : sDescricao, maqano :sAno , maqvalor : sValor}),
+      success: function(data) {
+        alert('Inserido com sucesso.')
+        $("#codigo").val('');
+        $("#descricao").val('');
+        $("#ano").val('');
+        $("#valor").val('');
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).then(res => {
+      $("#buscar").click();
+    });
+  }
+
 
   function deletar(iCodigo) {
     if(!iCodigo) {

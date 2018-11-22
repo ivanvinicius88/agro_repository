@@ -22,27 +22,7 @@ $(document).ready(function() {
       });
     };
 
-   /* $("#gravar").click(function() {
-      let sNome = $("#nome").val();
-
-      //enviado
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:41071/pessoa",
-        data: JSON.stringify ({nome: sNome}),
-        success: function(data) {
-          //alert("data: " + data);
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-    });
-
- 
-
-    $("#alterar").click(function() {
+  /*  $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
       let sNome = $("#nome").val();
 
@@ -67,6 +47,34 @@ $(document).ready(function() {
     }); */
 
   });
+
+  function adicionar(){
+    let iCodigo   = $("#codigo").val();
+    let sNome     = $("#nome").val();
+    let sIdade    = $("#idade").val();
+    let sCpf      = $("#cpf").val();
+    let sTelefone = $("#telefone").val();
+  
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8000/api/pessoa/",
+      data: JSON.stringify ({pescodigo: iCodigo, pesnome : sNome, pesidade :sIdade , pescpf : sCpf, pestelefone : sTelefone}),
+      success: function(data) {
+        alert('Inserido com sucesso.')
+        $("#codigo").val('');
+        $("#nome").val('');
+        $("#idade").val('');
+        $("#cpf").val('');
+        $("#telefone").val('');
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).then(res => {
+      $("#buscar").click();
+    });
+  }
+
+
 
 
   function deletar(iCodigo) {

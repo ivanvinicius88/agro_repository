@@ -23,26 +23,7 @@ $(document).ready(function() {
       });
     };
 
-    /* $("#gravar").click(function() {
-      let sNome = $("#nome").val();
-
-      //enviado
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:41071/pessoa",
-        data: JSON.stringify ({nome: sNome}),
-        success: function(data) {
-          //alert("data: " + data);
-        },
-        contentType: "application/json",
-        dataType: "json"
-      }).then(res => {
-        $("#buscar").click();
-      });
-    });
-
-
-
+/*
     $("#alterar").click(function() {
       let iCodigo = $("#codigo").val();
       let sNome = $("#nome").val();
@@ -68,6 +49,35 @@ $(document).ready(function() {
     }); */
 
   });
+
+  function adicionar(){
+    let ipes  = $("#pessoa").val();
+    let ilav  = $("#lavoura").val();
+    let imaq  = $("#maquinario").val();
+    let icod  = $("#codigo").val();
+    let sdesc = $("#descricao").val();
+    let sano  = $("#ano").val();
+  
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8000/api/safra/",
+      data: JSON.stringify ({pescodigo: ipes, lavcodigo : ilav, maqcodigo :imaq , safcodigo : icod, safdescricao : sdesc, safano : sano}),
+      success: function(data) {
+        alert('Inserido com sucesso.')
+        $("#pessoa").val('');
+        $("#lavoura").val('');
+        $("#maquinario").val('');
+        $("#codigo").val('');
+        $("#descricao").val('');
+        $("#ano").val('');
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).then(res => {
+      $("#buscar").click();
+    });
+  }
+
 
 
   function deletar(iCodigo) {

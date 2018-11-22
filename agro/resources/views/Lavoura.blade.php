@@ -17,7 +17,6 @@
     </table>
 </div>
 @endsection
-
 @section('javascript')
 <script type="text/javascript" src="/js/Lavoura.js"></script>
 @endsection
